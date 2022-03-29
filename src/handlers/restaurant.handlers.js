@@ -23,7 +23,21 @@ const getRestaurantDetailsById = async (req, res) => {
     res.json({ error: err.message }).status(err.httpCode);
   }
 };
+
+const getRestaurantsByDish = async (req, res) => {
+  const dishName = req.query.dish;
+  try {
+    console.log(dishName);
+    const restaurants = await services.getRestaurantsByDish(dishName);
+    if (restaurants.length > 0)res.json(restaurants).status(200);
+    else res.json({ message: 'No such dish found in any restaurant!' }).status(400);
+  } catch (err) {
+    res.json({ errors: err.message }).status(400);
+  }
+};
+
 module.exports = {
   getAllRestaurants,
   getRestaurantDetailsById,
+  getRestaurantsByDish,
 };
