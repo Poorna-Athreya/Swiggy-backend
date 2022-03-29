@@ -12,8 +12,6 @@ const seedData = async () => {
   return result;
 };
 
-seedData();
-
 module.exports = {
   seedData,
 };
