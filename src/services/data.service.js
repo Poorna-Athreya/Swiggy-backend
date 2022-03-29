@@ -11,7 +11,6 @@ const seedData = async () => {
   return utils.seedDB(restaurantsData, dishesData, menusData);
 };
 
-seedData();
 module.exports = {
   seedData,
 };
