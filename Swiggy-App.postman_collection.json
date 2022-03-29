@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "4441bd9f-cfe3-4686-ac35-09c19ae63ee7",
+		"name": "Swiggy-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Seeding the database",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/seed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting All Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/restaurants/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"restaurants",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting specific restaurant (by Id)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/restaurants/31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"restaurants",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting specific restaurant by Id, failure: does not exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/restaurants/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"restaurants",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting restaurants by querying dish",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/restaurants/search?dish=Soup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"restaurants",
+						"search"
+					],
+					"query": [
+						{
+							"key": "dish",
+							"value": "Soup"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting restauarnt by dish, failure: dish does not exist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/restaurants/search?dish=momos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"restaurants",
+						"search"
+					],
+					"query": [
+						{
+							"key": "dish",
+							"value": "momos"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
