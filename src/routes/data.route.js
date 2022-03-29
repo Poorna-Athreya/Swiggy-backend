@@ -1,10 +1,10 @@
 const express = require('express');
 const { dataHandler } = require('../handlers/data.handler');
 
-const DataRoute = express.Router();
+const dataRoute = express.Router();
 
-DataRoute.post('/', dataHandler);
+dataRoute.post('/', dataHandler);
 
 module.exports = {
-  DataRoute,
+  dataRoute,
 };
