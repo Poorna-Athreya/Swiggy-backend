@@ -8,7 +8,8 @@ const seedData = async () => {
   const restaurantsData = transformations.transformRestaurants(swiggyData);
   const dishesData = transformations.transformDishes(swiggyData);
   const menusData = await transformations.transformMenus(swiggyData);
-  return utils.seedDB(restaurantsData, dishesData, menusData);
+  const result = await utils.seedDB(restaurantsData, dishesData, menusData);
+  return result;
 };
 
 module.exports = {
