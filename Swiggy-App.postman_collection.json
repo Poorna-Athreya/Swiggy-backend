@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "4441bd9f-cfe3-4686-ac35-09c19ae63ee7",
+		"_postman_id": "accc603b-f587-4b48-96fe-6bbce8a75ccf",
 		"name": "Swiggy-App",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,6 +10,10 @@
 			"request": {
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://localhost:8000/seed",
 					"protocol": "http",
@@ -22,7 +26,65 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Seeding the database",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/seed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"seed"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-jLxisU6P4qHVzc55B09ECJYPsO0\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 11:27:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Database Successfully seeded!\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Getting All Restaurants",
@@ -42,7 +104,62 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Getting All Restaurants",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/restaurants/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "289"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"121-hgZFIkdR0lT1fyJ3UZibj1/qpks\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 14:22:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Restaurant A\",\n        \"location\": \"Bangalore\",\n        \"costForTwo\": 200\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Restaurant B\",\n        \"location\": \"Bangalore\",\n        \"costForTwo\": 2000\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Restaurant C\",\n        \"location\": \"Bangalore\",\n        \"costForTwo\": 1500\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Restaurant D\",\n        \"location\": \"Bangalore\",\n        \"costForTwo\": 15000\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "Getting specific restaurant (by Id)",
@@ -50,7 +167,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/restaurants/31",
+					"raw": "http://localhost:8000/restaurants/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -58,11 +175,66 @@
 					"port": "8000",
 					"path": [
 						"restaurants",
-						"31"
+						"1"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Getting specific restaurant (by Id)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/restaurants/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "181"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b5-8Q/VGIfk2P1Ou+6zgEPvHcZHQuo\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 14:06:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"Dishes\": [\n        {\n            \"id\": 1,\n            \"name\": \"Veg Sandwich\",\n            \"price\": 100,\n            \"rating\": 5\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Veg Burger\",\n            \"price\": 100,\n            \"rating\": 5\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Chicken Burger\",\n            \"price\": 150,\n            \"rating\": 4\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Getting specific restaurant by Id, failure: does not exist",
@@ -82,7 +254,62 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Getting specific restaurant by Id, failure: does not exist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/restaurants/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"100"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "47"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f-ELlhtDSVL+F4hBOqP21alntO12g\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 14:21:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No restaurant found with that Id!\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Getting restaurants by querying dish",
@@ -108,7 +335,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Getting restaurants by querying dish",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/restaurants/search?dish=Soup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"search"
+							],
+							"query": [
+								{
+									"key": "dish",
+									"value": "Soup"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c5-9qe3/kG0ezcFaPC2fDmYICq0dUA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 14:20:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"Restaurants\": [\n            {\n                \"id\": 2,\n                \"name\": \"Restaurant B\",\n                \"location\": \"Bangalore\",\n                \"costForTwo\": 2000\n            }\n        ]\n    },\n    {\n        \"id\": 13,\n        \"Restaurants\": [\n            {\n                \"id\": 4,\n                \"name\": \"Restaurant D\",\n                \"location\": \"Bangalore\",\n                \"costForTwo\": 15000\n            }\n        ]\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "Getting restauarnt by dish, failure: dish does not exist",
@@ -134,7 +422,68 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Getting restauarnt by dish, failure: dish does not exist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/restaurants/search?dish=momos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"search"
+							],
+							"query": [
+								{
+									"key": "dish",
+									"value": "momos"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-EYaVH/MY6E43Irvs9xZub+irguM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 29 Mar 2022 14:20:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No such dish found in any restaurant!\"\n}"
+				}
+			]
 		}
 	]
 }
