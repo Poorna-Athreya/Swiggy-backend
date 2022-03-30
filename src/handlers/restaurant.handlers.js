@@ -6,7 +6,7 @@ const getAllRestaurants = async (req, res) => {
     const restaurants = await services.getAllRestaurants();
     res.json(restaurants).status(200);
   } catch (err) {
-    res.json({ error: err.message }).status(400);
+    res.status(400).json({ error: err.message });
   }
 };
 
@@ -18,9 +18,9 @@ const getRestaurantDetailsById = async (req, res) => {
     if (typeof restaurantId !== 'number') throw new InputError('BadRequest', 'Invalid, restaurant Id must be a valid integer!', 400);
     const restaurantDetails = await services.getRestaurantDetailsById(restaurantId);
     if (restaurantDetails) res.json(restaurantDetails).status(200);
-    else res.json({ message: 'No restaurant found with that Id!' }).status(404);
+    else res.status(404).json({ message: 'No restaurant found with that Id!' });
   } catch (err) {
-    res.json({ error: err.message }).status(err.httpCode);
+    res.status(err.httpCode).json({ error: err.message });
   }
 };
 
@@ -30,9 +30,9 @@ const getRestaurantsByDish = async (req, res) => {
     console.log(dishName);
     const restaurants = await services.getRestaurantsByDish(dishName);
     if (restaurants.length > 0)res.json(restaurants).status(200);
-    else res.json({ message: 'No such dish found in any restaurant!' }).status(400);
+    else res.status(400).json({ message: 'No such dish found in any restaurant!' });
   } catch (err) {
-    res.json({ errors: err.message }).status(400);
+    res.status(400).json({ errors: err.message });
   }
 };
 
