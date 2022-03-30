@@ -88,6 +88,11 @@
           "name": "Barnacle",
           "price": "8000",
           "rating": 4
+        },
+        {
+          "name": "Soup",
+          "price": "100",
+          "rating": 4
         }
       ]
     }
