@@ -29,8 +29,11 @@ const getRestaurantsByDish = async (req, res) => {
   try {
     console.log(dishName);
     const restaurants = await services.getRestaurantsByDish(dishName);
-    if (restaurants.length > 0)res.json(restaurants).status(200);
-    else res.status(400).json({ message: 'No such dish found in any restaurant!' });
+    if (restaurants.length > 0) {
+      res.json(restaurants).status(200);
+    } else if (restaurants.length === 0) {
+      res.status(204).json({ message: 'No such dish found in any restaurant!' });
+    }
   } catch (err) {
     res.status(400).json({ errors: err.message });
   }
